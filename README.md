@@ -92,14 +92,14 @@ During the first period, Professor Colic introduced the 'Attention Mechanism' in
 
 **Transcript Example:**
 
-> "The attention mechanism is a neural network feature that allows the model to focus on specific parts of the input sequence when predicting a part of the output sequence, effectively allowing for more contextually relevant results."
+> "One word at a time. And now this first hidden state or H not representation that meaning from French and then RNN decoder is going to try and output that in English. … All right so we'll take a break here for about 8 minutes or so. So we'll continue at."
 
 **Generated Summary:**
 
-> "Attention mechanism: a neural feature focusing on parts of input for context-aware output predictions."
+> "Attention mechanisms and transformers are advancements in neural network architecture that improve the performance of neural machine translation systems, especially with longer sequences. … Transformers use self-attention to dynamically weigh the importance of different parts of the input data, enhancing the model's ability to handle long-range dependencies and complex patterns in data, and offering improved memory handling, interpretability, and flexibility in processing sequences."
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/first_period_recording_image.png" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/348f742a-4490-45b5-8369-441839c1ef0e" width="600" height="400">
 </p>
 
 #### **Second Period (2024/03/19): Transformer Model**
@@ -108,14 +108,14 @@ In the second period, the topic was the 'Transformer' model. The same workflow w
 
 **Transcript Example:**
 
-> "Transformers are a type of model architecture that utilize self-attention mechanisms to weigh the significance of different parts of the input data without the need for sequential processing."
+> "We addressed those largely with the attention mechanisms, Lstms. But yes, that issue grading is a limitation that we ran into but attention helps address that what's another limitation sequential their sequential complexity increases exactly. … Okay so let's, let's take a short break here and then."
 
 **Generated Summary:**
 
-> "Transformer model: utilizes self-attention to process input data non-sequentially for significance weighting."
+> "Sequential processing in recurrent neural networks (RNNs) and Long Short-Term Memory (LSTM) networks can be slow and complex due to the need to process data sequentially, which limits parallel computation. … Transformers use self-attention mechanisms to process input data in parallel, enhancing efficiency and allowing the model to focus on different parts of the input simultaneously, overcoming the limitations of RNNs."
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/second_period_recording_image.png" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/c670cf35-fb77-48a6-a18f-e4ae06e7a7a4" width="600" height="400">
 </p>
 
 The summaries produced by Llama 2 successfully condensed the essence of the lecture content, demonstrating the model's capability in an educational context.
