@@ -61,7 +61,7 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/7824cf36-e141-4a25-93e8-cb62edc496d0" width="800" height="500">
 </p>
 
-### **Result**
+## **Result**
 
 The outcomes of our research are as follows:
 
@@ -75,7 +75,7 @@ The outcomes of our research are as follows:
 
 - **Implications for Model Selection**: These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
 
-### **Ablation Study**
+## **Ablation Study**
 
 An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-shot performances of the Llama2 & Gemma models. Key findings include:
 - **Minimal Performance Difference:** Indicating that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
