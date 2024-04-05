@@ -49,7 +49,7 @@ Both models are built on Transformer architectures, optimized for efficiency and
 </p>
 
 
-### **Performance Metrics Explained**
+## **Performance Metrics Explained**
 
 The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2, ROUGE-L, BLEU, and BERT-Score. These metrics were chosen for their ability to capture different aspects of summarization quality:
 - **ROUGE-N (where N=1,2)** measures the overlap of N-grams between the generated summaries and reference texts, assessing the precision and recall of content.
