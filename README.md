@@ -45,7 +45,7 @@ Both models are built on Transformer architectures, optimized for efficiency and
 Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1" width="800" height="500">
 </p>
 
 
