@@ -22,7 +22,7 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
 </p>
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529">
 </p>
 
 
@@ -45,7 +45,7 @@ Both models are built on Transformer architectures, optimized for efficiency and
 Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1">
 </p>
 
 
@@ -58,7 +58,7 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
 - **BERT-Score** leverages the contextual embeddings from BERT to assess semantic similarity between the generated and reference texts, providing a more nuanced understanding of summarization quality.
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/7824cf36-e141-4a25-93e8-cb62edc496d0" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/7824cf36-e141-4a25-93e8-cb62edc496d0" width="800" height="500">
 </p>
 
 ### **Result**
