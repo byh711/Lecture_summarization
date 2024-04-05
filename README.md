@@ -22,26 +22,97 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
 - **GPT-2 (774M)**: Known for its powerful text generation capabilities using a decoder architecture.
 - **Llama 2 (7B)** and **Gemma (2B)**: Represent Meta AI and Google AI's advancements in efficient and scalable language models, balancing performance and computational efficiency.
 
-### **Performance Metrics**
+### **Performance Metrics Explained**
 
-The project adopts **ROUGE, BLEU, and BERT-Score metrics** to evaluate the models' performance. These metrics provide insights into the models' accuracy, structural similarity, and the semantic coherence of the generated summaries.
+The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2, ROUGE-L, BLEU, and BERT-Score. These metrics were chosen for their ability to capture different aspects of summarization quality:
+- **ROUGE-N (where N=1,2)** measures the overlap of N-grams between the generated summaries and reference texts, assessing the precision and recall of content.
+- **ROUGE-L** focuses on the longest common subsequence, highlighting the fluency and sentence-level structure of the summaries.
+- **BLEU** evaluates the precision of n-grams in the generated text compared to the reference, penalizing overly short or inaccurate outputs.
+- **BERT-Score** leverages the contextual embeddings from BERT to assess semantic similarity between the generated and reference texts, providing a more nuanced understanding of summarization quality.
 
-## **Results**
+### **Ablation Study**
 
-The results highlight **a correlation between the number of parameters in an LLM and its summarization performance**. Interestingly, for Llama2 and Gemma, zero-shot and few-shot learning approaches yielded comparable performance to fine-tuned models. This suggests that LLMs possess inherent capabilities that, with proper prompt engineering, can be leveraged for effective summarization without extensive fine-tuning.
+An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-shot performances of the Llama2 & Gemma models. Key findings include:
+- **Minimal Performance Difference:** Indicating that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
+- **Importance of Prompt Engineering:** The study underscored how tailored prompts can significantly influence model output quality, suggesting that effective prompt design can yield desired outcomes even without specialized expertise.
+- **Model Performance Comparison:** Despite Gemma's smaller size (2B parameters), it achieved a performance (BERT-Score of 42.3) close to that of Llama2 (7B parameters, BERT-Score of 45.3), demonstrating Gemma's efficiency.
 
-## **Discussion**
+## **Detailed Case Study**
 
-### **Limitations**
+### **Pre-Processing Steps**
 
-- **Resource Constraints**: The limited availability of GPU resources necessitated the use of LoRA quantization and smaller batch sizes, potentially impacting the models' performance.
-- **Metric Limitations**: The chosen evaluation metrics were insufficient to capture certain nuances, such as awkward sentence structures or grammatical errors, underscoring the need for human evaluation.
-- **Output Variability**: Inherent randomness in LLM outputs required the averaging of results across multiple trials to ascertain reliable performance benchmarks.
+The lecture recording was first transcribed into text using an automated speech recognition (ASR) tool. This raw text was then segmented into logical sections corresponding to distinct topics within the lecture.
 
-### **Implications**
+### **Model Application**
 
-The findings underscore **the significant potential of LLMs in educational applications**, particularly in automating the summarization of lecture content. Furthermore, the minimal performance difference between fine-tuning, zero-shot, and few-shot learning approaches opens up possibilities for deploying these models in resource-constrained environments.
+```python
+from transformers import pipeline
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+lecture_text = "Here is the lecture text segmented into logical sections."
+summary = summarizer(lecture_text, max_length=130, min_length=30, do_sample=False)
+print(summary)
 
-## **Conclusion**
+## **Summarization Examples**
 
-This project has demonstrated **the viability of using LLMs for the summarization of lecture content**, marking a promising step towards enhancing educational resources. The ability of models like Llama2 and Gemma to perform remarkably well, despite differences in their sizes, highlights the advancements in LLM technologies and their applicability in real-world scenarios. Moving forward, further research is needed to overcome the identified limitations and fully harness the capabilities of LLMs in education.
+**Before:** "The concept of neural networks is based on the understanding of biological neural networks."
+
+**After:** "Neural networks mimic biological networks."
+
+## **Model Architecture Details**
+
+### **BART**
+
+BART utilizes a Transformer-based neural machine translation architecture. It's designed with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT), making it highly effective for text summarization tasks.
+
+### **GPT-2**
+
+GPT-2 employs a stacked Transformer decoder architecture for text generation, with a notable capacity for learning from diverse data, making it adept at generating coherent and contextually relevant summaries.
+
+### **Llama 2 & Gemma**
+
+Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
+
+## **Future Directions**
+
+### **Technological Advancements**
+
+Future developments in LLMs could introduce models with even greater efficiency and nuanced understanding, further enhancing their summarization capabilities.
+
+### **Educational Impact**
+
+Widespread adoption of lecture summarization could revolutionize educational accessibility, engagement, and personalized learning, offering students tailored study materials and supporting diverse learning needs.
+
+## **Ethical Considerations and Limitations**
+
+### **Data Privacy**
+
+Processing sensitive lecture content raises data privacy issues, necessitating robust safeguards to protect educational data.
+
+### **Bias and Fairness**
+
+LLMs may inherit biases from training data, potentially skewing summarizations. Addressing these biases is crucial for equitable educational resources.
+
+### **Dependence on Technology**
+
+While AI offers significant benefits, balancing technology with traditional educational methods is essential to prevent over-reliance and ensure comprehensive learning experiences.
+
+## **Technical Appendix**
+
+### **Code Snippets**
+
+```python
+# Sample code for applying Llama 2 model for summarization
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+model = AutoModelForSeq2SeqLM.from_pretrained("Llama-2")
+tokenizer = AutoTokenizer.from_pretrained("Llama-2")
+inputs = tokenizer.encode("Here is some input text.", return_tensors="pt")
+outputs = model.generate(inputs)
+print(tokenizer.decode(outputs[0]))
+
+## **Hyperparameter Settings**
+
+For BART and Llama 2 models, the following hyperparameters were utilized:
+
+- Learning rate: `2e-5`
+- Batch size: `16`
+- Number of epochs: `4`
