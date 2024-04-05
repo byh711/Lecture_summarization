@@ -3,7 +3,11 @@
 
 ## **Introduction**
 
-In the realm of education, **distilling lectures into concise, informative summaries** remains a significant challenge. The advent of Large Language Models (LLMs) has opened new avenues for automating this task, potentially transforming how students engage with educational content. This project, conducted by Team 26, explores the application of LLMs to the task of lecture summarization, aiming to assess and compare the performance of various LLMs in this unique domain.
+Access to educational resources plays a crucial role in the quality of learning Students often navigate through dense, information-rich lectures and face the pressure of mastering content swiftly to meet academic demands. The extensive amount of material, coupled with the limited time students have makes it challenging to distill the key pieces of information from lectures effectively. 
+
+To that end, we’ve developed an approach to create comprehensive lecture summaries from lecture transcripts using Large Language Models (LLMs). We believe that by bridging the gap between long lectures and digestible written content, this project will help accelerate the learning process of students and significantly improve their ability to retain knowledge.
+
+This project’s objective was to develop an LLM-based Lecture Note Generator that takes in lectures and creates comprehensive lecture summarises. This core component tool is envisioned to later incorporate STT technology and markdown templates to create an end-to-end pipeline that gives students access to high quality educational material that is relevant to their academic endeavours. With this tool in hand, students can spend more of their time paying attention and actively participating in classes as they rest assured that the essential knowledge will be captured in an easily accessible, succinct format for their later review.
 
 ### **Project Objectives**
 
