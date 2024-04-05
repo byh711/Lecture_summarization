@@ -16,11 +16,23 @@ In the realm of education, **distilling lectures into concise, informative summa
 
 The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmarking, given its widespread use in text summarization tasks. This choice facilitates a focused evaluation of the LLMs' summarization capabilities on lecture content extracted from class recordings.
 
-### **Models Evaluated**
+## **Model Evaluated**
 
-- **BART (406M)**: Leverages a seq2seq architecture with a bidirectional encoder and a left-to-right decoder.
-- **GPT-2 (774M)**: Known for its powerful text generation capabilities using a decoder architecture.
-- **Llama 2 (7B)** and **Gemma (2B)**: Represent Meta AI and Google AI's advancements in efficient and scalable language models, balancing performance and computational efficiency.
+### **BART (406M)**
+
+BART utilizes a Transformer-based neural machine translation architecture. It's designed with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT), making it highly effective for text summarization tasks.
+
+### **GPT-2 (774M)**
+
+GPT-2 employs a stacked Transformer decoder architecture for text generation, with a notable capacity for learning from diverse data, making it adept at generating coherent and contextually relevant summaries.
+
+### **Llama 2 (7B)**
+
+Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
+
+### **Gemma (2B)**
+
+Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
 ### **Performance Metrics Explained**
 
@@ -29,6 +41,9 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
 - **ROUGE-L** focuses on the longest common subsequence, highlighting the fluency and sentence-level structure of the summaries.
 - **BLEU** evaluates the precision of n-grams in the generated text compared to the reference, penalizing overly short or inaccurate outputs.
 - **BERT-Score** leverages the contextual embeddings from BERT to assess semantic similarity between the generated and reference texts, providing a more nuanced understanding of summarization quality.
+
+### **Result**
+
 
 ### **Ablation Study**
 
@@ -58,20 +73,6 @@ print(summary)
 **Before:** "The concept of neural networks is based on the understanding of biological neural networks."
 
 **After:** "Neural networks mimic biological networks."
-
-## **Model Architecture Details**
-
-### **BART**
-
-BART utilizes a Transformer-based neural machine translation architecture. It's designed with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT), making it highly effective for text summarization tasks.
-
-### **GPT-2**
-
-GPT-2 employs a stacked Transformer decoder architecture for text generation, with a notable capacity for learning from diverse data, making it adept at generating coherent and contextually relevant summaries.
-
-### **Llama 2 & Gemma**
-
-Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
 ## **Discussion**
 
