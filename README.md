@@ -20,6 +20,8 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
 
 ![data_distribution](https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529)
 
+<img src = "[Your Image Addr](https://github.com/byh711/Lecture_summarization/assets/63491899/608cb060-4e3a-4f1d-bf9f-5133796bde68)" width="50%" height="50%">
+
 
 ## **Model Evaluated**
 
