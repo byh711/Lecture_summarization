@@ -33,7 +33,7 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529">
 </p>
 
-### **Making Datasets and DataLoaders**
+### **Dataset Preprocessing and Loader Setup**
 ```python
 # Imports for handling datasets and dataframes
 from datasets import Dataset, DatasetDict, load_dataset
