@@ -44,6 +44,15 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
 
 ### **Result**
 
+The outcomes of our research are as follows:
+
+- **Parameter Performance Correlation**: The results exhibit a clear correlation between the number of parameters in an LLM and its summarization performance. As illustrated in the accompanying chart, models with a higher number of parameters tend to produce more accurate and coherent summaries.
+  
+  ![Model Performance vs. Parameters](/path/to/chart.png "Model Performance vs. Number of Parameters")
+
+- **Learning Approach Efficacy**: Particularly for the Llama2 and Gemma models, performances under zero-shot and few-shot learning conditions are comparable to those achieved with fine-tuning. This suggests that, at least for the lecture summarization task, satisfactory results can be obtained without the need for extensive fine-tuning, thanks to the pre-trained models' existing knowledge base.
+
+- **Implications for Model Selection**: These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
 
 ### **Ablation Study**
 
