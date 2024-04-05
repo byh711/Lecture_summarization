@@ -10,7 +10,7 @@ To that end, we’ve developed an approach to create comprehensive lecture summa
 This project’s objective was to develop an LLM-based Lecture Note Generator that takes in lectures and creates comprehensive lecture summarises. This core component tool is envisioned to later incorporate STT technology and markdown templates to create an end-to-end pipeline that gives students access to high quality educational material that is relevant to their academic endeavours. With this tool in hand, students can spend more of their time paying attention and actively participating in classes as they rest assured that the essential knowledge will be captured in an easily accessible, succinct format for their later review.
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/cafddd9f-f5c7-42bf-9d9b-b3eb7136a4af">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/cafddd9f-f5c7-42bf-9d9b-b3eb7136a4af" width="50%" height="50%">
 </p>
 
 ### **Project Objectives**
