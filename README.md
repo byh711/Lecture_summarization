@@ -173,13 +173,20 @@ The summaries produced by Llama 2 successfully condensed the essence of the lect
 
 An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-shot performances of the Llama2 and Gemma models. Key findings include:
 
-- ### **Learning Approach Efficacy**
+### **Learning Approach Efficacy**
+
 Particularly for the Llama2 and Gemma models, performances under zero-shot and few-shot learning conditions are comparable to those achieved with fine-tuning. This suggests that, at least for the lecture summarization task, satisfactory results can be obtained without the need for extensive fine-tuning, thanks to the pre-trained models' existing knowledge base.
-- ### Minimal Performance Difference
+
+### **Minimal Performance Difference**
+
 Despite Gemma's smaller size (2B parameters), it achieved a performance (BERT-Score of 42.3) close to that of Llama2 (7B parameters, BERT-Score of 45.3), demonstrating Gemma's efficiency. This indicates that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
-- ### Implications for Model Selection
+
+### **Implications for Model Selection**
+
 These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
-- ### Importance of Prompt Engineering
+
+### **Importance of Prompt Engineering**
+
 The study underscored how tailored prompts can significantly influence model output quality, suggesting that effective prompt design can yield desired outcomes even without specialized expertise.
 
 <p align="center">
