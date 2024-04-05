@@ -99,7 +99,7 @@ During the first period, Professor Colic introduced the 'Attention Mechanism' in
 > "Attention mechanisms and transformers are advancements in neural network architecture that improve the performance of neural machine translation systems, especially with longer sequences. … Transformers use self-attention to dynamically weigh the importance of different parts of the input data, enhancing the model's ability to handle long-range dependencies and complex patterns in data, and offering improved memory handling, interpretability, and flexibility in processing sequences."
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/348f742a-4490-45b5-8369-441839c1ef0e" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/348f742a-4490-45b5-8369-441839c1ef0e" width="800" height="500">
 </p>
 
 #### **Second Period (2024/03/19): Transformer Model**
@@ -115,7 +115,7 @@ In the second period, the topic was the 'Transformer' model. The same workflow w
 > "Sequential processing in recurrent neural networks (RNNs) and Long Short-Term Memory (LSTM) networks can be slow and complex due to the need to process data sequentially, which limits parallel computation. … Transformers use self-attention mechanisms to process input data in parallel, enhancing efficiency and allowing the model to focus on different parts of the input simultaneously, overcoming the limitations of RNNs."
 
 <p align="center">
-  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/c670cf35-fb77-48a6-a18f-e4ae06e7a7a4" width="600" height="400">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/c670cf35-fb77-48a6-a18f-e4ae06e7a7a4" width="800" height="500">
 </p>
 
 The summaries produced by Llama 2 successfully condensed the essence of the lecture content, demonstrating the model's capability in an educational context.
