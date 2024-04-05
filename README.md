@@ -16,6 +16,11 @@ In the realm of education, **distilling lectures into concise, informative summa
 
 The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmarking, given its widespread use in text summarization tasks. This choice facilitates a focused evaluation of the LLMs' summarization capabilities on lecture content extracted from class recordings.
 
+![data_example](https://github.com/byh711/Lecture_summarization/assets/63491899/608cb060-4e3a-4f1d-bf9f-5133796bde68)
+
+![data_distribution](https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529)
+
+
 ## **Model Evaluated**
 
 ### **BART (406M)**
@@ -34,6 +39,8 @@ Both models are built on Transformer architectures, optimized for efficiency and
 
 Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
+![Model](https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1)
+
 ### **Performance Metrics Explained**
 
 The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2, ROUGE-L, BLEU, and BERT-Score. These metrics were chosen for their ability to capture different aspects of summarization quality:
@@ -42,13 +49,15 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
 - **BLEU** evaluates the precision of n-grams in the generated text compared to the reference, penalizing overly short or inaccurate outputs.
 - **BERT-Score** leverages the contextual embeddings from BERT to assess semantic similarity between the generated and reference texts, providing a more nuanced understanding of summarization quality.
 
+![Metric](https://github.com/byh711/Lecture_summarization/assets/63491899/7824cf36-e141-4a25-93e8-cb62edc496d0)
+
 ### **Result**
 
 The outcomes of our research are as follows:
 
 - **Parameter Performance Correlation**: The results exhibit a clear correlation between the number of parameters in an LLM and its summarization performance. As illustrated in the accompanying chart, models with a higher number of parameters tend to produce more accurate and coherent summaries.
-  
-  ![Model Performance vs. Parameters](/path/to/chart.png "Model Performance vs. Number of Parameters")
+
+  ![Result](https://github.com/byh711/Lecture_summarization/assets/63491899/bc9deaa6-cb19-442d-a45b-5c20217588e6)
 
 - **Learning Approach Efficacy**: Particularly for the Llama2 and Gemma models, performances under zero-shot and few-shot learning conditions are comparable to those achieved with fine-tuning. This suggests that, at least for the lecture summarization task, satisfactory results can be obtained without the need for extensive fine-tuning, thanks to the pre-trained models' existing knowledge base.
 
@@ -60,6 +69,8 @@ An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-sh
 - **Minimal Performance Difference:** Indicating that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
 - **Importance of Prompt Engineering:** The study underscored how tailored prompts can significantly influence model output quality, suggesting that effective prompt design can yield desired outcomes even without specialized expertise.
 - **Model Performance Comparison:** Despite Gemma's smaller size (2B parameters), it achieved a performance (BERT-Score of 42.3) close to that of Llama2 (7B parameters, BERT-Score of 45.3), demonstrating Gemma's efficiency.
+
+  ![Ablation](https://github.com/byh711/Lecture_summarization/assets/63491899/bd3b4e60-ac66-4793-9c96-b32a6bb3d6c9)
 
 ## **Detailed Case Study**
 
