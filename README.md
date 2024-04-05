@@ -169,3 +169,29 @@ For BART and Llama 2 models, the following hyperparameters were utilized:
 - Learning rate: `2e-5`
 - Batch size: `16`
 - Number of epochs: `4`
+
+## Related Works
+
+In our final project, we address the problem of lecture summarization, a domain-specific extractive summarization from lecture scripts, which involves identifying the most important sentences in a script.
+
+Many approaches to extractive summarization have been made since 2017, starting with *SummaRunner*, one of the early works using neural networks for text summarization. Since the emergence of Large Language Models (LLMs) in 2018, beginning with BERT, fine-tuning such models for downstream tasks has proven to be an effective and efficient method for achieving high-quality performance. Fine-tuning BERT for the lecture summarization task showcased BERT's capacity to select representative sentences from scripts, but challenges remained, such as identifying demonstrative pronouns (e.g., "these," "that").
+
+We investigate the capacity of recent LLMs such as Llama 2 and Gemma, along with widely deployed models such as BART and GPT-2. BART combines bidirectional context in encoding with sequential decoding, demonstrating its capacity for accurate input data understanding and reconstruction, which is suitable for natural language generation tasks, including summarization. GPT-2, with nearly double the parameters of BART, excels at generating contextually relevant text, which is particularly useful for lecture summarization.
+
+More recent works, Llama 2 by Meta AI and Gemma from Google, also demonstrate their ability to understand context accurately and generate coherent responses. Notably, Gemma, with 2 billion parameters, performs similarly to the 7 billion parameter model, Llama 2. The recent development of LLMs could mitigate the existing challenges of lecture summarization, particularly the understanding of pronouns from past sentences, and serve as a proxy to generate accurate and coherent summaries for lectures.
+
+### Citations
+
+[bert]: Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." arXiv preprint arXiv:1810.04805 (2018).
+
+[ft bert]: Miller, Derek. "Leveraging BERT for extractive text summarization on lectures." arXiv preprint arXiv:1906.04165 (2019).
+
+[bart]: Lewis, Mike, et al. "Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension." arXiv preprint arXiv:1910.13461 (2019).
+
+[gpt2]: Radford, Alec, et al. "Language models are unsupervised multitask learners." OpenAI blog 1.8 (2019): 9.
+
+[llama2]: Touvron, Hugo, et al. "Llama 2: Open foundation and fine-tuned chat models." arXiv preprint arXiv:2307.09288 (2023).
+
+[gemma]: Team, Gemma, et al. "Gemma: Open models based on gemini research and technology." arXiv preprint arXiv:2403.08295 (2024).
+
+[survey]: El-Kassas, Wafaa S., et al. "Automatic text summarization: A comprehensive survey." Expert systems with applications 165 (2021): 113679.
