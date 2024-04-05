@@ -84,6 +84,10 @@ BART, or Bidirectional and Auto-Regressive Transformers, was proposed by Mike Le
 
 Generative Pre-trained Transformer 2 (GPT-2) is a large language model developed by OpenAI. It was initially released on February 14, 2019. GPT-2 employs a stacked Transformer decoder architecture for text generation. This model is capable of learning from diverse data, making it adept at generating coherent and contextually relevant summaries. Unlike BERT, which is a bidirectional model, GPT-2 only attends to the left context (previous tokens) in the input during training.
 
+<p align="center">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/a5e38fd9-b22b-4fa8-aa71-14a7d13735e0" width="800" height="500">
+</p>
+
 ### **Llama 2 (7B)**
 
 Llama 2 is a family of pre-trained and fine-tuned large language models (LLMs) released by Meta AI in 2023. These models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 models are trained on 2 trillion tokens and have double the context length of Llama 1. They excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
