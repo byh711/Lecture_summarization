@@ -78,19 +78,19 @@ test_dataset = Dataset.from_pandas(test_dataset)
 
 ### **BART (406M)**
 
-BART utilizes a Transformer-based neural machine translation architecture. It's designed with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT), making it highly effective for text summarization tasks.
+BART, or Bidirectional and Auto-Regressive Transformers, was proposed by Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Ves Stoyanov, and Luke Zettlemoyer on October 29, 20191. It utilizes a Transformer-based neural machine translation architecture. Unlike traditional Transformer models, BART is designed with a bidirectional encoder (similar to BERT) and a left-to-right decoder (similar to GPT). This unique design makes it highly effective for text summarization tasks. During pretraining, BART learns to reconstruct original sentences from corrupted versions, making it particularly effective when fine-tuned for text generation.
 
 ### **GPT-2 (774M)**
 
-GPT-2 employs a stacked Transformer decoder architecture for text generation, with a notable capacity for learning from diverse data, making it adept at generating coherent and contextually relevant summaries.
+Generative Pre-trained Transformer 2 (GPT-2) is a large language model developed by OpenAI. It was initially released on February 14, 20192. GPT-2 employs a stacked Transformer decoder architecture for text generation. This model is capable of learning from diverse data, making it adept at generating coherent and contextually relevant summaries. Unlike BERT, which is a bidirectional model, GPT-2 only attends to the left context (previous tokens) in the input during training.
 
 ### **Llama 2 (7B)**
 
-Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
+Llama 2 is a family of pre-trained and fine-tuned large language models (LLMs) released by Meta AI in 20233. These models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 models are trained on 2 trillion tokens and have double the context length of Llama 14. They excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
 
 ### **Gemma (2B)**
 
-Both models are built on Transformer architectures, optimized for efficiency and scalability. Llama 2 and Gemma excel in understanding and generating human-like text, attributable to their extensive pre-training on vast datasets.
+Gemma is a family of lightweight, state-of-the-art open models built from the research and technology used to create Gemini models6. It was made available worldwide on February 22, 20247. Like Llama 2, Gemma models are also built on Transformer architectures, optimized for efficiency and scalability. Gemma models demonstrate strong performance across academic benchmarks for language understanding, reasoning, and safety.
 
 <p align="center">
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/ebb527fd-fba4-4f2d-8fc3-66d3653a4bc1" width="800" height="500">
