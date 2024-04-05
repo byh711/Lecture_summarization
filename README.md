@@ -1,5 +1,9 @@
 # **Leveraging Large Language Models (LLMs) for Lecture Summarization**
 
+<p align="center">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/608cb060-4e3a-4f1d-bf9f-5133796bde68" width="600" height="400">
+</p>
+
 ## **Introduction**
 
 In the realm of education, **distilling lectures into concise, informative summaries** remains a significant challenge. The advent of Large Language Models (LLMs) has opened new avenues for automating this task, potentially transforming how students engage with educational content. This project, conducted by Team 26, explores the application of LLMs to the task of lecture summarization, aiming to assess and compare the performance of various LLMs in this unique domain.
@@ -19,8 +23,6 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
 ![data_example](https://github.com/byh711/Lecture_summarization/assets/63491899/608cb060-4e3a-4f1d-bf9f-5133796bde68)
 
 ![data_distribution](https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529)
-
-<img src = "[Your Image Addr](https://github.com/byh711/Lecture_summarization/assets/63491899/608cb060-4e3a-4f1d-bf9f-5133796bde68)" width="50%" height="50%">
 
 
 ## **Model Evaluated**
