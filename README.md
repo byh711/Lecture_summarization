@@ -33,6 +33,46 @@ The project utilizes the **CNN/DailyMail dataset** for pretraining and benchmark
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bf5884f9-d233-4c1d-876d-a657613d5529">
 </p>
 
+### **Making Datasets and DataLoaders**
+```python
+# Imports for handling datasets and dataframes
+from datasets import Dataset, DatasetDict, load_dataset
+import pandas as pd
+
+# Load the CNN/Daily Mail dataset
+train_data = load_dataset("cnn_dailymail", "3.0.0", split="train[:3000]")
+val_data = load_dataset("cnn_dailymail", "3.0.0", split="validation[:1000]")
+test_data = load_dataset("cnn_dailymail", "3.0.0", split="test[:1000]")
+
+# Function to preprocess the dataset
+def preprocess_dataset(dataset):
+    df = []
+    for data in dataset:
+        # Extract the article and highlights from the dataset
+        question = data['article']
+        answer = data['highlights']
+
+        # Format the data as a prompt for the text summarization task
+        prompt = f"<bos><start_of_turn>user\nYou are a helpful assistant for text summarization tasks. Once I provide you with the original content, please summarize it. Here is the content: {question}<end_of_turn>\n<start_of_turn>model\n{answer}<end_of_turn>"
+        df.append(prompt)
+    return df
+
+# Preprocess and format the training dataset
+train_dataset = preprocess_dataset(train_data)
+train_dataset = pd.DataFrame({"text": train_dataset})
+train_dataset = Dataset.from_pandas(train_dataset)
+
+# Preprocess and format the validation dataset
+val_dataset = preprocess_dataset(val_data)
+val_dataset = pd.DataFrame({"text": val_dataset})
+val_dataset = Dataset.from_pandas(val_dataset)
+
+# Preprocess and format the test dataset
+test_dataset = preprocess_dataset(test_data)
+test_dataset = pd.DataFrame({"text": test_dataset})
+test_dataset = Dataset.from_pandas(test_dataset)
+```
+
 
 ## **Model Evaluated**
 
