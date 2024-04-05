@@ -182,16 +182,10 @@ More recent works, Llama 2 by Meta AI and Gemma from Google, also demonstrate th
 
 ### Citations
 
-[bert]: Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." arXiv preprint arXiv:1810.04805 (2018).
-
-[ft bert]: Miller, Derek. "Leveraging BERT for extractive text summarization on lectures." arXiv preprint arXiv:1906.04165 (2019).
-
-[bart]: Lewis, Mike, et al. "Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension." arXiv preprint arXiv:1910.13461 (2019).
-
-[gpt2]: Radford, Alec, et al. "Language models are unsupervised multitask learners." OpenAI blog 1.8 (2019): 9.
-
-[llama2]: Touvron, Hugo, et al. "Llama 2: Open foundation and fine-tuned chat models." arXiv preprint arXiv:2307.09288 (2023).
-
-[gemma]: Team, Gemma, et al. "Gemma: Open models based on gemini research and technology." arXiv preprint arXiv:2403.08295 (2024).
-
-[survey]: El-Kassas, Wafaa S., et al. "Automatic text summarization: A comprehensive survey." Expert systems with applications 165 (2021): 113679.
+- **BERT**: Devlin, Jacob, et al. "Bert: Pre-training of deep bidirectional transformers for language understanding." [arXiv preprint arXiv:1810.04805](https://arxiv.org/abs/1810.04805) (2018).
+- **Fine-tuning BERT**: Miller, Derek. "Leveraging BERT for extractive text summarization on lectures." [arXiv preprint arXiv:1906.04165](https://arxiv.org/abs/1906.04165) (2019).
+- **BART**: Lewis, Mike, et al. "Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension." [arXiv preprint arXiv:1910.13461](https://arxiv.org/abs/1910.13461) (2019).
+- **GPT-2**: Radford, Alec, et al. "Language models are unsupervised multitask learners." [OpenAI blog 1.8](https://openai.com/research/gpt-2) (2019): 9.
+- **Llama 2**: Touvron, Hugo, et al. "Llama 2: Open foundation and fine-tuned chat models." [arXiv preprint arXiv:2307.09288](https://arxiv.org/abs/2307.09288) (2023).
+- **Gemma**: Team, Gemma, et al. "Gemma: Open models based on gemini research and technology." [arXiv preprint arXiv:2403.08295](https://arxiv.org/abs/2403.08295) (2024).
+- **Automatic Text Summarization Survey**: El-Kassas, Wafaa S., et al. "Automatic text summarization: A comprehensive survey." [Expert Systems with Applications 165](https://www.sciencedirect.com/science/article/abs/pii/S0957417420307511) (2021): 113679.
