@@ -51,6 +51,7 @@ summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 lecture_text = "Here is the lecture text segmented into logical sections."
 summary = summarizer(lecture_text, max_length=130, min_length=30, do_sample=False)
 print(summary)
+```
 
 ## **Summarization Examples**
 
@@ -108,6 +109,7 @@ tokenizer = AutoTokenizer.from_pretrained("Llama-2")
 inputs = tokenizer.encode("Here is some input text.", return_tensors="pt")
 outputs = model.generate(inputs)
 print(tokenizer.decode(outputs[0]))
+```
 
 ## **Hyperparameter Settings**
 
