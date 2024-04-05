@@ -75,6 +75,52 @@ The outcomes of our research are as follows:
 
 - **Implications for Model Selection**: These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
 
+
+## Showcasing the Summarization Model
+
+### **Course Lecture Summarization Example**
+
+As a part of our project's application, we recorded a course lecture by Professor Sinisa Colic at the University of Toronto's MIE department. The lecture was transcribed using Google Cloud Platform's (GCP) Speech-to-Text API. The transcript was then processed through our best-performing model, Llama 2, to generate a summary.
+
+#### **First Period (2024/03/19): Attention Mechanism**
+
+During the first period, Professor Colic introduced the 'Attention Mechanism' in deep learning. Below is the workflow we followed for the summarization process:
+
+1. **Recording**: Captured the lecture audio.
+2. **Transcription**: Utilized GCP STT API for extracting accurate lecture transcripts.
+3. **Summarization**: Input the transcript into the Llama 2 model to generate the summary.
+
+**Transcript Example:**
+
+> "The attention mechanism is a neural network feature that allows the model to focus on specific parts of the input sequence when predicting a part of the output sequence, effectively allowing for more contextually relevant results."
+
+**Generated Summary:**
+
+> "Attention mechanism: a neural feature focusing on parts of input for context-aware output predictions."
+
+<p align="center">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/first_period_recording_image.png" width="600" height="400">
+</p>
+
+#### **Second Period (2024/03/19): Transformer Model**
+
+In the second period, the topic was the 'Transformer' model. The same workflow was used as outlined above.
+
+**Transcript Example:**
+
+> "Transformers are a type of model architecture that utilize self-attention mechanisms to weigh the significance of different parts of the input data without the need for sequential processing."
+
+**Generated Summary:**
+
+> "Transformer model: utilizes self-attention to process input data non-sequentially for significance weighting."
+
+<p align="center">
+  <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/second_period_recording_image.png" width="600" height="400">
+</p>
+
+The summaries produced by Llama 2 successfully condensed the essence of the lecture content, demonstrating the model's capability in an educational context.
+
+
 ## **Ablation Study**
 
 An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-shot performances of the Llama2 & Gemma models. Key findings include:
