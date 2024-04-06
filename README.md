@@ -255,7 +255,7 @@ This repository provides code snippets and guides for fine-tuning the Gemma mode
 ### **Setup**
 
 Before starting, ensure you have installed the required Python packages:
-```python
+```bash
 pip install torch datasets transformers evaluate
 ```
 
