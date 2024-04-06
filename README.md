@@ -457,7 +457,7 @@ print(metrics_df)
 
 For those interested in a deeper dive into the coding and implementation specifics of each model, Colab notebooks are provided. These notebooks contain detailed code examples, including model loading, preprocessing, training, and evaluation steps, offering a comprehensive guide through each process.
 
-- **BART Model**: [BART Colab Notebook] (https://colab.research.google.com/drive/1wPaRmWSzKG3PTEhseiVLVc38RMtZuw_K?usp=sharing)
+- **BART Model**: [Bart Colab Notebook](https://colab.research.google.com/drive/1wPaRmWSzKG3PTEhseiVLVc38RMtZuw_K?usp=drive_link)
 
 - **GPT-2 Model**: [GPT-2 Colab Notebook](https://colab.research.google.com/drive/1IpHNRuGwW87ClMNiaFiZVLWq5m88XhM_?usp=sharing)
 
