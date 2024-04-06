@@ -134,21 +134,35 @@ As a part of our project's application, we recorded a course lecture by Professo
 ### **Code Snippets**
 
 ```python
-# Check the current CUDA device
-device = torch.cuda.current_device()
-print(f"Current CUDA device: {device}")
-
+# Define the transcript and prompt
 transcript = "YOUR LECTURE TRANSCRIPT"
-
 prompt = "You are a helpful assistant for text summarization tasks. Once I provide you with the original content, please summarize it."
+
+# Prepare the input text
 input_text = f"<bos><start_of_turn>user\n{prompt} Here is the content: {transcript}<end_of_turn>\n<start_of_turn>model\n"
+
+# Encode the input text using the tokenizer
 input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(device)
 
+# Generate the summary using the model
 with torch.no_grad():
-    output_ids = model.generate(input_ids, max_length=2048, early_stopping=True, do_sample = True, num_beams=3, temperature=0.9, top_k=5, top_p=0.9, pad_token_id=tokenizer.pad_token_id, eos_token_id=tokenizer.eos_token_id)
+    output_ids = model.generate(
+        input_ids,
+        max_length=2048,
+        early_stopping=True,
+        do_sample=True,
+        num_beams=3,
+        temperature=0.9,
+        top_k=5,
+        top_p=0.9,
+        pad_token_id=tokenizer.pad_token_id,
+        eos_token_id=tokenizer.eos_token_id
+    )
 
+# Decode the generated summary
 generated_summary = tokenizer.decode(output_ids[0], skip_special_tokens=True).split("\nmodel")[1]
 
+# Print the generated summary
 print(f"generated_summary:{generated_summary}")
 ```
 
