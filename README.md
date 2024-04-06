@@ -219,27 +219,6 @@ An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-sh
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bd3b4e60-ac66-4793-9c96-b32a6bb3d6c9" width="600" height="400">
 </p> 
 
-## **Detailed Case Study**
-
-### **Pre-Processing Steps**
-
-The lecture recording was first transcribed into text using an automated speech recognition (ASR) tool. This raw text was then segmented into logical sections corresponding to distinct topics within the lecture.
-
-### **Model Application**
-
-```python
-from transformers import pipeline
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-lecture_text = "Here is the lecture text segmented into logical sections."
-summary = summarizer(lecture_text, max_length=130, min_length=30, do_sample=False)
-print(summary)
-```
-
-## **Summarization Examples**
-
-**Before:** "The concept of neural networks is based on the understanding of biological neural networks."
-
-**After:** "Neural networks mimic biological networks."
 
 ## **Discussion**
 
@@ -259,27 +238,15 @@ This project has demonstrated **the viability of using LLMs for the summarizatio
 
 ## **Future Directions**
 
-### **Technological Advancements**
+- **Technological Advancements**: Future developments in LLMs could introduce models with even greater efficiency and nuanced understanding, further enhancing their summarization capabilities.
 
-Future developments in LLMs could introduce models with even greater efficiency and nuanced understanding, further enhancing their summarization capabilities.
-
-### **Educational Impact**
-
-Widespread adoption of lecture summarization could revolutionize educational accessibility, engagement, and personalized learning, offering students tailored study materials and supporting diverse learning needs.
+- **Educational Impact**: Widespread adoption of lecture summarization could revolutionize educational accessibility, engagement, and personalized learning, offering students tailored study materials and supporting diverse learning needs.
 
 ## **Ethical Considerations and Limitations**
 
-### **Data Privacy**
-
-Processing sensitive lecture content raises data privacy issues, necessitating robust safeguards to protect educational data.
-
-### **Bias and Fairness**
-
-LLMs may inherit biases from training data, potentially skewing summarizations. Addressing these biases is crucial for equitable educational resources.
-
-### **Dependence on Technology**
-
-While AI offers significant benefits, balancing technology with traditional educational methods is essential to prevent over-reliance and ensure comprehensive learning experiences.
+- **Data Privacy**: Processing sensitive lecture content raises data privacy issues, necessitating robust safeguards to protect educational data.
+- **Bias and Fairness**: LLMs may inherit biases from training data, potentially skewing summarizations. Addressing these biases is crucial for equitable educational resources.
+- **Dependence on Technology**: While AI offers significant benefits, balancing technology with traditional educational methods is essential to prevent over-reliance and ensure comprehensive learning experiences.
 
 ## **Technical Appendix**
 
