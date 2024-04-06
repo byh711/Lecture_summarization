@@ -250,17 +250,187 @@ This project has demonstrated **the viability of using LLMs for the summarizatio
 
 ## **Technical Appendix**
 
-### **Code Snippets**
+### **Code Snippets for Fine-tuning Gemma model**
 
 ```python
-# Sample code for applying Llama 2 model for summarization
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-model = AutoModelForSeq2SeqLM.from_pretrained("Llama-2")
-tokenizer = AutoTokenizer.from_pretrained("Llama-2")
-inputs = tokenizer.encode("Here is some input text.", return_tensors="pt")
-outputs = model.generate(inputs)
-print(tokenizer.decode(outputs[0]))
+# Imports necessary libraries and modules for the task
+import os
+import torch
+from datasets import load_dataset
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    TrainingArguments,
+    pipeline,
+    logging,
+)
+from peft import LoraConfig
+from trl import SFTTrainer
+import transformers
+
+# Load the pre-trained model with the specified quantization configuration and authentication token
+quant_config = BitsAndBytesConfig(
+    load_in_8bit=True,
+    llm_int8_threshold=6.0,
+    llm_int8_goal_bits=8,
+    num_workers=4,
+)
+access_token = "your_access_token"
+model = AutoModelForCausalLM.from_pretrained(
+    "google/gemma-2b-it",
+    quantization_config=quant_config,
+    device_map={"": 0},
+    token=access_token
+)
+
+# Disable caching to potentially save memory
+model.config.use_cache = False
+
+# Set configuration related to parallel processing
+model.config.pretraining_tp = 1
+
+# Load the tokenizer and configure it for use with the model
+tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b-it")
+tokenizer.padding_side = "right"
+
+# Define training parameters
+training_params = TrainingArguments(
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=4,
+    warmup_steps=2,
+    max_steps=50,
+    learning_rate=2e-4,
+    fp16=True,
+    logging_steps=1,
+    output_dir="./results",
+    optim="paged_adamw_8bit"
+)
+
+# Define PEFT (Parameter-Efficient Fine-Tuning) configuration
+peft_params = LoraConfig(
+    r=8,
+    target_modules=["q_proj", "o_proj", "k_proj", "v_proj", "gate_proj", "up_proj", "down_proj"],
+    task_type="CAUSAL_LM",
+)
+
+# Create the SFTTrainer
+trainer = SFTTrainer(
+    model=model,
+    train_dataset=train_dataset,
+    eval_dataset=val_dataset,
+    peft_config=peft_params,
+    tokenizer=tokenizer,
+    args=training_params,
+    packing=False,
+    dataset_text_field="text"
+)
+
+# Train the model
+trainer.train()
 ```
+
+### **Code Snippets for Data loading of 2-shot learning**
+```python
+# Prepare the actual and generated summaries
+generated_summaries = []
+
+# Define few-shot examples (Another examples are used for this project.)
+few_shot_examples = [
+    {
+        "original": "In a meadow, a quick brown fox jumps over a lazy dog, basking in the sun.",
+        "summary": "A fox leaps over a dog."
+    },
+    {
+        "original": "Python is a popular programming language, especially in data science due to its powerful libraries like NumPy and Pandas.",
+        "summary": "Python is favored in data science."
+    }
+]
+
+# Iterating through the test data
+for data in test_data:
+    content = data['original']
+
+    # Create the summarization pipeline
+    pipe = pipeline(
+        task="text-generation",
+        model=few_model,
+        tokenizer=tokenizer,
+        max_length=2048
+    )
+
+    # Construct the prompt with few-shot examples
+    prompt = "You are a helpful assistant for text summarization tasks. First, I will give you two examples. Then, I will provide you with the original content. Please summarize it."
+    for cnt, example in enumerate(few_shot_examples, start=1):
+        prompt += f"\nExample {cnt}: {example['original']}\nSummary: {example['summary']}"
+
+    # Generate the summary
+    result = pipe(f"<bos><start_of_turn>user\n{prompt}\nNow, here is the content: {content}<end_of_turn>\n<start_of_turn>model\n")
+    generated_summary = result[0]['generated_text'].split("<start_of_turn>model")[1]
+
+    # Append the generated summary to the list
+    generated_summaries.append(generated_summary)
+```
+
+### **Code Snippets for Evaluating Model performance using 5 metrics**
+```python
+# Import necessary libraries
+import evaluate
+from transformers import pipeline
+import torch
+import pandas as pd
+
+# Load the required metrics
+rouge_metric = evaluate.load('rouge', trust_remote_code=True)
+bleu_metric = evaluate.load('bleu', trust_remote_code=True)
+bertscore_metric = evaluate.load('bertscore', trust_remote_code=True)
+
+def calculate_metrics(actual_summaries, generated_summaries):
+    """
+    Calculate the evaluation metrics for the generated summaries.
+
+    Args:
+        actual_summaries (list): List of actual summaries.
+        generated_summaries (list): List of generated summaries.
+
+    Returns:
+        tuple: (rouge_scores, bleu_scores, bertscore_scores)
+    """
+    rouge_scores = rouge_metric.compute(
+        predictions=generated_summaries,
+        references=actual_summaries,
+        use_stemmer=True
+    )
+
+    bleu_scores = bleu_metric.compute(
+        predictions=generated_summaries,
+        references=actual_summaries
+    )
+
+    bertscore_scores = bertscore_metric.compute(
+        predictions=generated_summaries,
+        references=actual_summaries,
+        lang='en'
+    )
+
+    return rouge_scores, bleu_scores, bertscore_scores
+
+# Calculate the evaluation metrics
+rouge_scores, bleu_scores, bertscore_scores = calculate_metrics(actual_summaries, generated_summaries)
+
+# Store the results in a DataFrame
+metrics_df = pd.DataFrame({
+    'ROUGE-1': [rouge_scores['rouge1']],
+    'ROUGE-2': [rouge_scores['rouge2']],
+    'ROUGE-L': [rouge_scores['rougeL']],
+    'BLEU': [bleu_scores['bleu']],
+    'BERTScore': [bertscore_scores['f1'][0]]
+})
+
+# Print the metrics DataFrame
+print(metrics_df)
+```
+
 
 ## **Hyperparameter Settings**
 
