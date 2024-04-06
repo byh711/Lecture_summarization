@@ -118,6 +118,7 @@ The evaluation of model performance utilized five key metrics: ROUGE-1, ROUGE-2,
 The outcomes of our research are as follows:
 
 - **Parameter Performance Correlation**: The results exhibit a clear correlation between the number of parameters in an LLM and its summarization performance. As illustrated in the accompanying chart, models with a higher number of parameters tend to produce more accurate and coherent summaries.
+- **Minimal Performance Difference**: Despite Gemma's smaller size (2B parameters), it achieved a performance (Rouge-L of 39.8) close to that of Llama2 (7B parameters, Rouge-L of 48.3), demonstrating Gemma's efficiency. This indicates that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
 
 <p align="center">
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bc9deaa6-cb19-442d-a45b-5c20217588e6" width="600" height="400">
@@ -173,21 +174,11 @@ The summaries produced by Llama 2 successfully condensed the essence of the lect
 
 An ablation study was conducted comparing the Fine-tuning, Zero-shot, and Few-shot performances of the Llama2 and Gemma models. Key findings include:
 
-### **Learning Approach Efficacy**
+- **Learning Approach Efficacy**: Particularly for the Llama2 and Gemma models, performances under zero-shot and few-shot learning conditions are comparable to those achieved with fine-tuning. This suggests that, at least for the lecture summarization task, satisfactory results can be obtained without the need for extensive fine-tuning, thanks to the pre-trained models' existing knowledge base.
 
-Particularly for the Llama2 and Gemma models, performances under zero-shot and few-shot learning conditions are comparable to those achieved with fine-tuning. This suggests that, at least for the lecture summarization task, satisfactory results can be obtained without the need for extensive fine-tuning, thanks to the pre-trained models' existing knowledge base.
+- **Implications for Model Selection**: These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
 
-### **Minimal Performance Difference**
-
-Despite Gemma's smaller size (2B parameters), it achieved a performance (BERT-Score of 42.3) close to that of Llama2 (7B parameters, BERT-Score of 45.3), demonstrating Gemma's efficiency. This indicates that both models possess inherent knowledge suitable for text summarization tasks, highlighting the potential redundancy of extensive fine-tuning for certain applications.
-
-### **Implications for Model Selection**
-
-These findings have significant implications for the selection and deployment of LLMs in practical settings. Given the minimal performance difference, stakeholders can choose models like Gemma for their efficiency, even with fewer parameters, without sacrificing quality in the summarization task.
-
-### **Importance of Prompt Engineering**
-
-The study underscored how tailored prompts can significantly influence model output quality, suggesting that effective prompt design can yield desired outcomes even without specialized expertise.
+- **Importance of Prompt Engineering**: The study underscored how tailored prompts can significantly influence model output quality, suggesting that effective prompt design can yield desired outcomes even without specialized expertise.
 
 <p align="center">
   <img src="https://github.com/byh711/Lecture_summarization/assets/63491899/bd3b4e60-ac66-4793-9c96-b32a6bb3d6c9" width="600" height="400">
