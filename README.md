@@ -242,9 +242,9 @@ This project has demonstrated **the viability of using LLMs for the summarizatio
 
 - **Educational Impact**: Widespread adoption of lecture summarization could revolutionize educational accessibility, engagement, and personalized learning, offering students tailored study materials and supporting diverse learning needs.
 
-## **Ethical Considerations and Limitations**
+## **Ethical Considerations**
 
-- **Data Privacy**: Processing sensitive lecture content raises data privacy issues, necessitating robust safeguards to protect educational data.
+- **Data Privacy**: Processing sensitive content raises data privacy issues, necessitating robust safeguards to protect educational data.
 - **Bias and Fairness**: LLMs may inherit biases from training data, potentially skewing summarizations. Addressing these biases is crucial for equitable educational resources.
 - **Dependence on Technology**: While AI offers significant benefits, balancing technology with traditional educational methods is essential to prevent over-reliance and ensure comprehensive learning experiences.
 
