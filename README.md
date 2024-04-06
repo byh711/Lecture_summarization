@@ -463,7 +463,7 @@ For those interested in a deeper dive into the coding and implementation specifi
 
 - **Llama 2 Model**: [Llama 2 Colab Notebook](https://colab.research.google.com/drive/1k2V4lTsBHRvdHkA131rs6z2II_UNH_cW?usp=sharing)
 
-- **Gemma Model**: [Gemma Colab Notebook](https://colab.research.google.com/drive/1Qg1Q9s_fBXq9gWQZTQq_tnIBgqOtv5II?usp=sharing).
+- **Gemma Model**: [Gemma Colab Notebook](https://colab.research.google.com/drive/1Qg1Q9s_fBXq9gWQZTQq_tnIBgqOtv5II?usp=sharing)
 
 
 ## Related Works
