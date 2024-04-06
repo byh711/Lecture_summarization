@@ -250,8 +250,20 @@ This project has demonstrated **the viability of using LLMs for the summarizatio
 
 ## **Technical Appendix**
 
-### **Code Snippets for Fine-tuning Gemma model**
+This repository provides code snippets and guides for fine-tuning the Gemma model for various NLP tasks. It covers fine-tuning with Parameter-Efficient Fine-Tuning (PEFT) methods, implementing 2-shot learning for text summarization, and evaluating model performance using five different metrics.
 
+### **Setup**
+
+Before starting, ensure you have installed the required Python packages:
+```python
+pip install torch datasets transformers evaluate
+```
+
+### **Fine-Tuning the Gemma Model**
+
+Fine-tuning a pre-trained model involves customizing it on a dataset specific to your task. This section demonstrates how to fine-tune the Gemma model with a focus on parameter efficiency.
+
+#### **Code Snippet**
 ```python
 # Imports necessary libraries and modules for the task
 import os
@@ -330,12 +342,17 @@ trainer = SFTTrainer(
 trainer.train()
 ```
 
-### **Code Snippets for Data loading of 2-shot learning**
+### **2-Shot Learning for Text Summarization**
+
+Implementing 2-shot learning for text summarization involves providing the model with a few examples to guide its understanding of the task.
+
+#### **Code Snippet**
+
 ```python
 # Prepare the actual and generated summaries
 generated_summaries = []
 
-# Define few-shot examples (Another examples are used for this project.)
+# Define few-shot examples
 few_shot_examples = [
     {
         "original": "In a meadow, a quick brown fox jumps over a lazy dog, basking in the sun.",
@@ -372,7 +389,12 @@ for data in test_data:
     generated_summaries.append(generated_summary)
 ```
 
-### **Code Snippets for Evaluating Model performance using 5 metrics**
+### **Evaluating Model Performance**
+
+After training and generating summaries, it's crucial to evaluate the model's performance using various metrics.
+
+#### **Code Snippet**
+
 ```python
 # Import necessary libraries
 import evaluate
@@ -431,14 +453,6 @@ metrics_df = pd.DataFrame({
 print(metrics_df)
 ```
 
-
-## **Hyperparameter Settings**
-
-For BART and Llama 2 models, the following hyperparameters were utilized:
-
-- Learning rate: `2e-5`
-- Batch size: `16`
-- Number of epochs: `4`
 
 ## Related Works
 
