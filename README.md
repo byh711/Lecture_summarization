@@ -1,5 +1,6 @@
 # **Leveraging Large Language Models (LLMs) for Lecture Summarization**
 
+This project was conducted as part of the 'MIE1517 Introduction to Deep Learning' course under Professor Sinisa Colic at the University of Toronto's MIE department.
 
 ## **Introduction**
 
